@@ -42,11 +42,11 @@ SHELL=/bin/sh
 ########################################################################### 
 
 # The base for the names of the makefile, executable command, etc.
-BASE=  area
+BASE= file
 
 # Put all C++ (or other) source files here.  NO SPACES after continuation \'s.
 SRCS= \
-area.cpp 
+file.cpp 
 
 # Put all header files here.  NO SPACES after continuation \'s.
 HDRS= \
