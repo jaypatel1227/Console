@@ -50,7 +50,7 @@ console.cpp
 
 # Put all header files here.  NO SPACES after continuation \'s.
 HDRS= \
-
+console.h
 # Put any input files you want to be saved in tarballs (e.g., sample files).
 INPFILE= \
 
