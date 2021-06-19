@@ -22,7 +22,7 @@ string remove_match_end(string inp, string match);
 
 int read_num(string inp);
 
-
+string read_word(string inp);
 
 //////////////////// Commands
 
@@ -38,3 +38,7 @@ void echo(string inp);
 // USAGE: list_nums $low$ $high$
 // lists numbers from low to high (inclusive)
 void list_nums(string inp);
+
+// USAGE: cat $filename$ $filename$ ...
+// prints the contents of all of the inputed files
+void cat(string inp);

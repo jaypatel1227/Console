@@ -1,6 +1,3 @@
-// #include <iostream>
-// #include <fstream>
-// #include <string>
 #include "console.h"
 
 using namespace std;
@@ -14,7 +11,8 @@ int main() {
 	getline(cin, inp);
 	if (ends_with(inp, "\\")){
 	  string temp = "";
-	  while(not ends_with(inp, "\\")){
+	  while(ends_with(inp, "\\") == 1){
+		cout << "> ";
 		cin >> temp;
 		inp = inp + "\n" + temp;
 	  }
@@ -27,11 +25,14 @@ void evaluate(string inp){
   if (inp == "exit"){
 	return;
   }
-  if (begins_with(inp, "echo")){
+  if (begins_with(inp, "echo ")){
 	echo(inp);
   }
-  else if (begins_with(inp, "list_nums")){
+  else if (begins_with(inp, "list_nums ")){
 	list_nums(inp);
+  }
+  else if (begins_with(inp, "cat ")){
+	cat(inp);
   }
   else{
 	cout << "Unable to read that command." << endl;
@@ -79,16 +80,12 @@ string remove_match_end(string inp, string match){
 }
 
 int read_num(string inp){
-  string num = "";
-  for (int i = 0; i < int(inp.length()); i++){
-	if (isdigit(inp[i]) == 0){
-	  break;
-	}
-	num += inp[i];
-  }
-  return stoi(num);
+  return stoi(inp.substr(0, inp.find(" ")));
 }
 
+string read_word(string inp){
+  return inp.substr(0, inp.find(" "));
+}
 //////////////////// Commands
 
 void echo(string inp){
@@ -104,4 +101,22 @@ void list_nums(string inp){
   for (int i = low; i <= high; i++){
 	cout << i << endl;
   }
+}
+
+void cat(string inp){
+  inp = remove_match_front(inp, "cat ");
+  string file = "";
+  while (inp != ""){
+	file = read_word(inp);
+	inp = remove_match_front(inp, file + " ");
+	ifstream File(file);
+	string line;
+	cout << "---" << file << "---" << endl;
+	while (getline(File, line)){
+	  cout << line << endl;
+	}
+	File.close();
+	cout << endl;
+  }
+
 }
