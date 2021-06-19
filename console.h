@@ -4,6 +4,8 @@
 
 using namespace std;
 
+//////////////////// Internal functions
+
 // checks if inp begins with match
 bool begins_with(string inp, string match); 
 
@@ -18,8 +20,21 @@ bool ends_with(string inp, string match);
 // doesn't check if inp ends with match (must check with ends_with)
 string remove_match_end(string inp, string match);
 
+int read_num(string inp);
+
+
+
+//////////////////// Commands
+
+
+
+// the temporary way to analyze the input and execute
+void evaluate(string inp);
+
+// USAGE: echo $message$
 // implements the good ol' echo command
 void echo(string inp);
 
-// the temperary way to analyze the input and execute
-void evaluate(string inp);
+// USAGE: list_nums $low$ $high$
+// lists numbers from low to high (inclusive)
+void list_nums(string inp);

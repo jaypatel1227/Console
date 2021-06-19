@@ -24,11 +24,21 @@ int main() {
 }
 
 void evaluate(string inp){
+  if (inp == "exit"){
+	return;
+  }
   if (begins_with(inp, "echo")){
 	echo(inp);
   }
-  
+  else if (begins_with(inp, "list_nums")){
+	list_nums(inp);
+  }
+  else{
+	cout << "Unable to read that command." << endl;
+  }
 }
+
+//////////////////// Internal functions 
 
 bool begins_with(string inp, string match){
   bool flag = true;
@@ -68,6 +78,30 @@ string remove_match_end(string inp, string match){
   return res;
 }
 
+int read_num(string inp){
+  string num = "";
+  for (int i = 0; i < int(inp.length()); i++){
+	if (isdigit(inp[i]) == 0){
+	  break;
+	}
+	num += inp[i];
+  }
+  return stoi(num);
+}
+
+//////////////////// Commands
+
 void echo(string inp){
   cout << remove_match_front(inp, "echo ") << endl;
+}
+
+void list_nums(string inp){
+  string args = remove_match_front(inp, "list_nums ");
+  int low = read_num(args);
+  args = remove_match_front(args, to_string(low) + " ");
+  int high = read_num(args);
+  args = remove_match_front(args, to_string(high));
+  for (int i = low; i <= high; i++){
+	cout << i << endl;
+  }
 }
