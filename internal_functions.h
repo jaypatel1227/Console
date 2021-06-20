@@ -7,7 +7,6 @@ using namespace std;
 // the temporary way to analyze the input and execute
 void evaluate(string inp);
 
-
 // checks if inp begins with match
 bool begins_with(string inp, string match); 
 
