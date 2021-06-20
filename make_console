@@ -46,11 +46,14 @@ BASE= console
 
 # Put all C++ (or other) source files here.  NO SPACES after continuation \'s.
 SRCS= \
-console.cpp
+console.cpp\
+commands.cpp\
+internal_functions.cpp
 
 # Put all header files here.  NO SPACES after continuation \'s.
 HDRS= \
-console.h
+internal_functions.h\
+commands.h
 # Put any input files you want to be saved in tarballs (e.g., sample files).
 INPFILE= \
 
