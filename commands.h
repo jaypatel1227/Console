@@ -15,7 +15,3 @@ void list_nums(string inp);
 // USAGE: cat $filename$ $filename$ ...
 // prints the contents of all of the inputed files
 void cat(string inp);
-
-// USAGE: touch $filename$
-// makes a file with said name if it doesn't exist. Otherwise, it just opens and does nothing else
-void touch(string inp);
