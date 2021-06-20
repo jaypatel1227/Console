@@ -17,6 +17,9 @@ void evaluate(string inp){
   else if (begins_with(inp, "cat ")){
 	cat(inp);
   }
+  else if (begins_with(inp, "touch ")){
+	touch(inp);
+  }
   else{
 	cout << "Unable to read that command." << endl;
   }

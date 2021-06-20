@@ -38,3 +38,9 @@ void cat(string inp){
   }
 
 }
+
+void touch(string inp){
+  ofstream my_out(remove_match_front(inp, "touch "));
+  my_out << "" << endl;
+  my_out.close();
+}
