@@ -33,3 +33,7 @@ void tail(string inp);
 // USAGE: clear
 // clears the screen 
 void clear();
+
+// USAGE: pwd
+// prints the current working directory
+void pwd();

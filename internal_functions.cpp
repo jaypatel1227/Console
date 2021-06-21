@@ -29,6 +29,9 @@ void evaluate(string inp){
   else if (begins_with(inp, "clear")){
 	clear();
   }
+  else if (begins_with(inp, "pwd")){
+	pwd();
+  }
   else{
 	cout << "Unable to read that command." << endl;
   }

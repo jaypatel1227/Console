@@ -80,3 +80,10 @@ void clear(){
 	return;
   }
 }
+
+void pwd(){
+  int res = system("pwd"); 
+  if (res){
+	return;
+  }
+}
