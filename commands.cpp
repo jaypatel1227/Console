@@ -71,3 +71,11 @@ void tail(string inp){
   }
   File.close();
 }
+
+void clear(){
+  // this is just to get the compiler to not hate me
+  int res = system("/bin/echo -e \"\\x1b\\x5b\\x48\\x1b\\x5b\\x32\\x4a\\c\"");
+  if (res){
+	return;
+  }
+}

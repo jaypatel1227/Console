@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <deque>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -28,3 +29,7 @@ void head(string inp);
 // USAGE: tail $filename$
 // prints the last 10 lines of the file
 void tail(string inp);
+
+// USAGE: clear
+// clears the screen 
+void clear();
