@@ -20,6 +20,12 @@ void evaluate(string inp){
   else if (begins_with(inp, "touch ")){
 	touch(inp);
   }
+  else if (begins_with(inp, "head ")){
+	head(inp);
+  }
+  else if (begins_with(inp, "tail ")){
+	tail(inp);
+  }
   else{
 	cout << "Unable to read that command." << endl;
   }

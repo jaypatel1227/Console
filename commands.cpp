@@ -34,7 +34,6 @@ void cat(string inp){
 	  cout << line << endl;
 	}
 	File.close();
-	cout << endl;
   }
 
 }
@@ -43,4 +42,32 @@ void touch(string inp){
   ofstream my_out(remove_match_front(inp, "touch "));
   my_out << "";
   my_out.close();
+}
+
+void head(string inp){
+  ifstream File(remove_match_front(inp, "head "));
+  int count = 0;
+  string line;
+  while (count < 10 && getline(File, line)){
+	cout << line << endl;
+	count++;
+  }
+  File.close();
+}
+
+void tail(string inp){
+  // I have a very bad implementation that will read through the whole file and store the current and 9 previous line and write them out at the the end
+  ifstream File(remove_match_front(inp, "tail "));
+  string line;
+  deque<string> last_lines;
+  while(getline(File, line)){
+    if(last_lines.size() == 10){
+      last_lines.pop_front();
+	}
+    last_lines.push_back(line);
+  }
+  for(unsigned int i = 0; i < last_lines.size(); i++){
+	cout << last_lines[i] << endl;
+  }
+  File.close();
 }
