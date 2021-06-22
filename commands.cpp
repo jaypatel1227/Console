@@ -6,6 +6,39 @@
 
 using namespace std;
 
+void evaluate(string inp){
+  if (inp == "exit"){
+	return;
+  }
+  if (begins_with(inp, "echo ")){
+	echo(inp);
+  }
+  else if (begins_with(inp, "list_nums ")){
+	list_nums(inp);
+  }
+  else if (begins_with(inp, "cat ")){
+	cat(inp);
+  }
+  else if (begins_with(inp, "touch ")){
+	touch(inp);
+  }
+  else if (begins_with(inp, "head ")){
+	head(inp);
+  }
+  else if (begins_with(inp, "tail ")){
+	tail(inp);
+  }
+  else if (begins_with(inp, "clear")){
+	clear();
+  }
+  else if (begins_with(inp, "pwd")){
+	pwd();
+  }
+  else{
+	cout << "Unable to read that command." << endl;
+  }
+}
+
 void echo(string inp){
   cout << remove_match_front(inp, "echo ") << endl;
 }
@@ -86,4 +119,28 @@ void pwd(){
   if (res){
 	return;
   }
+}
+
+void less(string inp){
+  string file = remove_match_front(inp, "less ");
+  ifstream File(file);
+
+  string line;
+  int line_num = 0;
+  deque<string> current_lines;
+  for (int i = 0; i<19 && getline(File, line); i++){
+    if(current_lines.size() == 19){
+      current_lines.pop_front();
+	  line_num++;
+	}
+	else{
+	  current_lines.push_back("Enter q to quit. \\> ");
+	}
+    current_lines.push_back(line);
+  }
+  for(unsigned int i = 0; i < current_lines.size(); i++){
+	cout << current_lines[i] << endl;
+  }
+
+
 }

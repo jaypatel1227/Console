@@ -6,6 +6,9 @@
 
 using namespace std;
 
+// the temporary way to analyze the input and execute
+void evaluate(string inp);
+
 // USAGE: echo $message$
 // implements the good ol' echo command
 void echo(string inp);
@@ -37,3 +40,7 @@ void clear();
 // USAGE: pwd
 // prints the current working directory
 void pwd();
+
+// USAGE: less $filename$
+// allows you to read a file in a neat and convenient way
+void less(string inp);

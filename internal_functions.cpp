@@ -1,43 +1,7 @@
 
 // This contains internal functions to be used in commands.cpp
 
-#include "commands.h"
 #include "internal_functions.h"
-
-void evaluate(string inp){
-  if (inp == "exit"){
-	return;
-  }
-  if (begins_with(inp, "echo ")){
-	echo(inp);
-  }
-  else if (begins_with(inp, "list_nums ")){
-	list_nums(inp);
-  }
-  else if (begins_with(inp, "cat ")){
-	cat(inp);
-  }
-  else if (begins_with(inp, "touch ")){
-	touch(inp);
-  }
-  else if (begins_with(inp, "head ")){
-	head(inp);
-  }
-  else if (begins_with(inp, "tail ")){
-	tail(inp);
-  }
-  else if (begins_with(inp, "clear")){
-	clear();
-  }
-  else if (begins_with(inp, "pwd")){
-	pwd();
-  }
-  else{
-	cout << "Unable to read that command." << endl;
-  }
-}
-
-//////////////////// Internal functions 
 
 bool begins_with(string inp, string match){
   bool flag = true;
