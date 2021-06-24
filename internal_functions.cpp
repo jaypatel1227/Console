@@ -57,7 +57,7 @@ void append_hist(int i, string inp){
 
 int read_hist_num(){
   fstream hist("hist_num.txt");
-  hist.seekg(0);  
+  hist.seekp(0);  
   string lin;
   getline(hist, lin);
   int i;
@@ -71,12 +71,9 @@ int read_hist_num(){
   }
   return i;
 }
-void increment_num(){
-  fstream num("hist_num.txt");
-  string x;
-  getline(num, x);
-  int i = stoi(x);
+void set_num(int i){
+  ofstream num("hist_num.txt");
   num.seekp(0);
-  num << i+1;
+  num << i;
   num.close();
 }

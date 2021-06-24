@@ -34,6 +34,9 @@ void evaluate(string inp){
   else if (begins_with(inp, "pwd")){
 	pwd();
   }
+  else if (begins_with(inp, "history")){
+	history();
+  }
   else{
 	cout << "Unable to read that command." << endl;
   }
@@ -121,6 +124,7 @@ void pwd(){
   }
 }
 
+// WIP I have put it on hiatus as it is kind of annoying to write
 void less(string inp){
   string file = remove_match_front(inp, "less ");
   ifstream File(file);
@@ -141,6 +145,8 @@ void less(string inp){
   for(unsigned int i = 0; i < current_lines.size(); i++){
 	cout << current_lines[i] << endl;
   }
+}
 
-
+void history(){
+  evaluate("cat hist.txt");
 }

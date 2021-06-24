@@ -26,4 +26,4 @@ void append_hist(int i, string inp);
 
 int read_hist_num();
 
-void increment_num();
+void set_num(int i);

@@ -25,10 +25,8 @@ int main() {
 	  }
 	}
 	append_hist(i, inp);
-	increment_num();
 	i++;
 	evaluate(inp);
   }
+  set_num(i);
 }
-
-

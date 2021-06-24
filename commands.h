@@ -41,6 +41,10 @@ void clear();
 // prints the current working directory
 void pwd();
 
+// USAGE: history
+// prints the history of commands entered (including the history command that was just entered)
+void history();
+
 // USAGE: less $filename$
 // allows you to read a file in a neat and convenient way
 void less(string inp);
