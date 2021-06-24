@@ -48,3 +48,35 @@ int read_num(string inp){
 string read_word(string inp){
   return inp.substr(0, inp.find(" "));
 }
+
+void append_hist(int i, string inp){
+  ofstream append("hist.txt", ios::app);
+  append << i << " " << inp << endl;
+  append.close();
+}
+
+int read_hist_num(){
+  fstream hist("hist_num.txt");
+  hist.seekg(0);  
+  string lin;
+  getline(hist, lin);
+  int i;
+  if (lin.empty()){
+	hist.seekp(0);
+	hist << "0";
+	i = 0;
+  }
+  else{
+	i = stoi(lin);
+  }
+  return i;
+}
+void increment_num(){
+  fstream num("hist_num.txt");
+  string x;
+  getline(num, x);
+  int i = stoi(x);
+  num.seekp(0);
+  num << i+1;
+  num.close();
+}

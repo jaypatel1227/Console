@@ -21,3 +21,9 @@ string remove_match_end(string inp, string match);
 int read_num(string inp);
 
 string read_word(string inp);
+
+void append_hist(int i, string inp);
+
+int read_hist_num();
+
+void increment_num();

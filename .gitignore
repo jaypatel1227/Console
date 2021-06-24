@@ -1,5 +1,7 @@
 #specific Files
 make_file
+hist.txt
+hist_num.txt
 
 # Prerequisites
 *.d
